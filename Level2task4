@@ -1,0 +1,25 @@
+# Level2task4 "Fibonacci sequence"
+
+def generate_fibonacci(n):
+    # Starting with the first two numbers in the Fibonacci sequence
+    fib_sequence = [0, 1]
+
+    # Fibonacci sequence up to n terms
+    for i in range(2, n):
+    
+        next_number = fib_sequence[-1] + fib_sequence[-2]
+        fib_sequence.append(next_number)
+
+    
+    return fib_sequence[:n]
+
+
+num_terms = int(input("Enter the number of terms: "))
+
+# Generate and display the Fibonacci sequence
+if num_terms <= 0:
+    print("Please enter a positive integer.")
+else:
+    fibonacci_sequence = generate_fibonacci(num_terms)
+    print(f"The first {num_terms} terms of the Fibonacci sequence are:")
+    print(fibonacci_sequence)
